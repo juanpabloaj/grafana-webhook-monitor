@@ -10,7 +10,6 @@ defmodule Grafanawebhook.Repo do
   end
 
   def put(data) do
-    IO.inspect data
     GenServer.cast(__MODULE__, {:put, data})
   end
 
@@ -19,13 +18,18 @@ defmodule Grafanawebhook.Repo do
   end
 
   def handle_call({:get_all}, _from, state) do
-    #IO.inspect state
-    {:reply, state, state}
+    {:reply, Enum.reverse(state), state}
   end
 
   def handle_cast({:put, data}, state) do
-    state = state ++ [data]
-    {:noreply, state}
+    data = Map.put(data, "created_at", inspect(System.system_time(:millisecond)))
+
+    state = case length(state) >= 10 do
+      true -> tl(state)
+      _ -> state
+    end
+
+    {:noreply, state ++ [data]}
   end
 
 end

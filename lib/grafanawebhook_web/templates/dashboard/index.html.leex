@@ -1,5 +1,5 @@
 <ul id="messages">
   <%= for msg <- @messages do %>
-    <li> <%= msg["title"] %></li>
+    <li> <%= msg["created_at"] %> <%= msg["title"] %></li>
   <% end %>
 </ul>
