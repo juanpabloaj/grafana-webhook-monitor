@@ -1,7 +1,11 @@
 defmodule GrafanawebhookWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :grafanawebhook
 
-  socket "/socket", GrafanawebhookWeb.UserSocket
+  socket "/live", Phoenix.LiveView.Socket
+
+  socket "/socket", GrafanawebhookWeb.UserSocket,
+    websocket: true,
+    longpoll: false
 
   # Serve at "/" the static files from "priv/static" directory.
   #

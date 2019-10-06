@@ -13,6 +13,12 @@
 // to also remove its path from "config.paths.watched".
 import "phoenix_html"
 
+import {Socket} from "phoenix"
+import LiveSocket from "phoenix_live_view"
+
+let liveSocket = new LiveSocket("/live", Socket)
+liveSocket.connect()
+
 // Import local files
 //
 // Local files can be imported directly using relative
