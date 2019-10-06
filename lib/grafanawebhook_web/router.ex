@@ -17,7 +17,7 @@ defmodule GrafanawebhookWeb.Router do
   scope "/", GrafanawebhookWeb do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", DashboardController, :index
   end
 
   # Other scopes may use custom stacks.
