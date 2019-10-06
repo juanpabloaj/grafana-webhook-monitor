@@ -1,4 +1,8 @@
-# Grafanawebhook
+# Grafana webhook monitor
+
+Send a message to test
+
+    curl -X POST -H "Content-Type:application/json" -d @grafana_webhook_payload.json http://0.0.0.0:4000/api
 
 To start your Phoenix server:
 
@@ -10,7 +14,7 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
 
-## Learn more
+## Learn more about Phoenix
 
   * Official website: http://www.phoenixframework.org/
   * Guides: http://phoenixframework.org/docs/overview

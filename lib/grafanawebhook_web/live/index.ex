@@ -18,4 +18,13 @@ defmodule GrafanawebhookWeb.Live.Index do
       messages: Dashboard.list_messages()
     })
   end
+
+  def handle_info({Dashboard, [:message, _event_type], _message}, socket) do
+    {:noreply, fetch(socket, get_user_name(socket))}
+  end
+
+  defp get_user_name(socket) do
+    socket.assigns
+    |> Map.get(:user_name)
+  end
 end

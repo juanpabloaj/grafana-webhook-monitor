@@ -21,7 +21,10 @@ defmodule GrafanawebhookWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", GrafanawebhookWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", GrafanawebhookWeb do
+    pipe_through :api
+
+    get "/", ApiController, :index
+    post "/", ApiController, :index
+  end
 end

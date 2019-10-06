@@ -22,7 +22,7 @@ defmodule Grafanawebhook.Dashboard do
 
   """
   def list_messages do
-    Repo.all()
+    Repo.get_all()
   end
 
   @doc """
@@ -37,10 +37,10 @@ defmodule Grafanawebhook.Dashboard do
       {:error, ...}
 
   """
-  def create_message(_attrs \\ %{}) do
-    %{}
+  def create_message(attrs \\ %{}) do
+    Repo.put(attrs)
+    {:ok, %{}}
     |> notify_subs([:message, :inserted])
-    raise "TODO"
   end
 
   defp notify_subs({:ok, result}, event) do

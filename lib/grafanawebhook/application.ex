@@ -10,6 +10,7 @@ defmodule Grafanawebhook.Application do
     children = [
       # Start the endpoint when the application starts
       supervisor(GrafanawebhookWeb.Endpoint, []),
+      supervisor(Grafanawebhook.Repo, []),
       # Start your own worker by calling: Grafanawebhook.Worker.start_link(arg1, arg2, arg3)
       # worker(Grafanawebhook.Worker, [arg1, arg2, arg3]),
     ]
