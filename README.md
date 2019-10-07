@@ -1,10 +1,20 @@
 # Grafana webhook monitor
 
+Show Grafana's webhook notifications
+
+https://grafana.com/docs/alerting/notifications/#webhook
+
 Send a message to test
 
     curl -X POST -H "Content-Type:application/json" -d @grafana_webhook_payload.json http://0.0.0.0:4000/api
 
-To start your Phoenix server:
+### Run
+
+With docker
+
+    docker run --rm --name  grafana-monitor -p 0.0.0.0:4000:4000 -d juanpabloaj/grafana-webhook-monitor
+
+Or to start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
   * Install Node.js dependencies with `cd assets && npm install`
