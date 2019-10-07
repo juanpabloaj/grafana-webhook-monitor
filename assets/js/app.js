@@ -16,7 +16,19 @@ import "phoenix_html"
 import {Socket} from "phoenix"
 import LiveSocket from "phoenix_live_view"
 
-let liveSocket = new LiveSocket("/live", Socket)
+import timeago from 'timeago.js';
+
+let hooks = {}
+hooks.MessagesList = {
+  updated() {
+    timeago().render(document.querySelectorAll('.rendered-by-timeago'));
+  },
+  mounted() {
+    timeago().render(document.querySelectorAll('.rendered-by-timeago'))
+  }
+}
+
+let liveSocket = new LiveSocket("/live", Socket, {hooks})
 liveSocket.connect()
 
 // Import local files

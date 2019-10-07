@@ -33,7 +33,7 @@ defmodule Grafanawebhook.Mixfile do
   defp deps do
     [
       {:phoenix, "~> 1.4.10"},
-      {:phoenix_live_view, "~> 0.3.0"},
+      {:phoenix_live_view, "~> 0.3.1"},
       {:plug_cowboy, "~> 2.0"},
       {:plug, "~> 1.8"},
       {:phoenix_pubsub, "~> 1.1"},

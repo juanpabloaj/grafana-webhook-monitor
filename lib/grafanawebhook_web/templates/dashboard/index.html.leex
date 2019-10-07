@@ -1,5 +1,5 @@
-<ul id="messages">
+<ul id="messages" phx-hook="MessagesList">
   <%= for msg <- @messages do %>
-    <li> <%= msg["created_at"] %> <%= msg["title"] %></li>
+    <li><span class="rendered-by-timeago" datetime="<%= msg["created_at"] %>"></span> <%= msg["title"] %></li>
   <% end %>
 </ul>
