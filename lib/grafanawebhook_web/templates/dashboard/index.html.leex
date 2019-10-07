@@ -1,5 +1,15 @@
-<ul id="messages" phx-hook="MessagesList">
+<div class="card-columns" id="messages" phx-hook="MessagesList">
   <%= for msg <- @messages do %>
-    <li><span class="rendered-by-timeago" datetime="<%= msg["created_at"] %>"></span> <%= msg["title"] %></li>
+    <div class="card text-white bg-dark">
+      <img src="<%= msg["imageUrl"]%>" class="card-img-top" alt="">
+      <div class="card-header"><%= msg["title"] %></div>
+      <div class="card-body">
+        <p class="card-text">
+          <span class="rendered-by-timeago" datetime="<%= msg["created_at"] %>"></span>
+          </br>
+          <small class="text-muted"><%= msg["message"] %></small>
+        </p>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>

@@ -4,7 +4,7 @@
   "ruleName": "Load peaking!",
   "ruleUrl": "http://url.to.grafana/db/dashboard/my_dashboard?panelId=2",
   "state": "alerting",
-  "imageUrl": "https://i.imgur.com/hFVTF3P.jpg",
+  "imageUrl": "https://i.kym-cdn.com/entries/icons/original/000/008/342/ihave.jpg",
   "message":
     "Load is peaking. Make sure the traffic is real and spin up more webfronts",
   "evalMatches": [
