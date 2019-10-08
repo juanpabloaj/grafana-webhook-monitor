@@ -1,5 +1,7 @@
 # Grafana webhook monitor
 
+![Imgur](https://i.imgur.com/UdgIsUI.jpg)
+
 Show Grafana's webhook notifications
 
 https://grafana.com/docs/alerting/notifications/#webhook
