@@ -1,3 +1,12 @@
+<%= if Enum.empty?(@messages) do %>
+  <p class="text-light text-center">
+    Waiting for webhook alerts ...
+    <br>
+    <a href="https://grafana.com/docs/alerting/notifications/#webhook" target="_blank">
+    How add a new webhook alert?
+    </a>
+  </p>
+<% end %>
 <div class="card-columns" id="messages" phx-hook="MessagesList">
   <%= for msg <- @messages do %>
     <div class="card text-white bg-dark">
